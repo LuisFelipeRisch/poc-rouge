@@ -1,16 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>PocRouge</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <style>
+    h3.question {
+    font-family: "Roboto", sans-serif;
+    font-size: 24px;
+    text-align: center;
+    font-weight: 100;
+    }
+    .editor-container {
+      width: 900px;
+      height: 540px;
+      margin: 20px auto;
+      position: relative;
+    }
+    #editor {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      height: 100%;
+      width: 100%;
+      font-size: 20px;
+     }
+    </style>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
   </head>
-
   <body>
-    <%= yield %>
+    <h3 class="question">Teste Highlight syntax</h3>
+
+    <div class="editor-container">
+      <div id="editor">Vportal::CustomTable.fetch('dexpara_matricula_52298f981848fd43019c').where(matricula: formable.installation_number.to_s.tr('-','')).first&.cc_multa_e_juros</div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.5.3/ace.js"></script>
+
+    <script>
+    let editor = document.querySelector("#editor");
+    ace.edit(editor, {
+      theme: "ace/theme/sqlserver",
+      mode: "ace/mode/ruby",
+    });
+    </script>
   </body>
 </html>
