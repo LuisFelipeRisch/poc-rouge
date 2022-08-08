@@ -32,17 +32,7 @@
   </head>
   <body>
   <%#Vportal::CustomTable.fetch('dexpara_matricula_52298f981848fd43019c').where(matricula: formable.installation_number.to_s.tr('-','')).first&.cc_multa_e_juros%>
-    <h3 class="question">Teste Highlight syntax</h3>
-
-    <form>
-      <%= form_with url: "/submit", method: :get do |form| %>
-      <div class="editor-container">
-        <div id="editor"></div>
-      </div>
-      <%= form.text_area :bussines_rule, style: 'display:none' %>
-      <%= form.submit "Submit" %>
-    <% end %>
-
+    <%= yield %>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.5.3/ace.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>

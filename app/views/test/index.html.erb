@@ -1,2 +1,13 @@
 <h1>Test#index</h1>
 <p>Find me in app/views/test/index.html.erb</p>
+
+<h3 class="question">Teste Highlight syntax</h3>
+
+    <%= form_with url: :test_submit, method: :post do |form| %>
+      <div class="editor-container">
+        <div id="editor"></div>
+      </div>
+      <%= form.text_area :bussines_rule, style: 'display:none' %>
+      <%= form.submit "Submit" %>
+    <% end %>
+
